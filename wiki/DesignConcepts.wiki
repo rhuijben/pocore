@@ -8,9 +8,7 @@ _see [http://pocore.googlecode.com/svn/trunk/include/pc_misc.h pc_misc.h]_
 
 ==Pools==
 
-_TBD_
-
-_see [http://pocore.googlecode.com/svn/trunk/include/pc_memory.h pc_memory.h]_
+_see MemoryManagement and [http://pocore.googlecode.com/svn/trunk/include/pc_memory.h pc_memory.h]_
 
 ==Tracking==
 
