@@ -49,4 +49,4 @@ This is essentially the compare-and-swap functionality that PoCore will implemen
 
 === xchg32/xchgptr ===
 
-These functions are useless. Race conditions abound here... the "old value is returned" could be from a microsecond before or after an intended point of evaluation. It has no meaningful value whatsoever. From a concurrency standpoint, applications can simply use `read32()` to investigate a value and `set32()` to apply a new one (though, as previously-mentioned, those operations are similarly bogus in today's environments).
+These functions are implemented similar to the loop described above for `add32`, but where the new value is specified instead of `value+delta`. This variant is used (for example) where the old value is a reference to (old) information that needs to be cleared/processed now that a new value has been stored.
