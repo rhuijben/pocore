@@ -31,3 +31,9 @@ PoCore does not associate locks with any of its structures. This means the objec
 Generally, an application should allocate one `pc_context_t` per thread, and ensure that (tracking) relationships are not established across context boundaries.
 
 It is certainly possible to share PoCore objects among threads (provided appropriate management by the application). PoCore objects do not have thread-affinity.
+
+== Locking and Atomicty ==
+
+See MutexPrimitives and AtomicPrimitives.
+
+_see [http://pocore.googlecode.com/svn/trunk/include/pc_mutex.h pc_mutex.h]_
