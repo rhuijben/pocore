@@ -1,4 +1,5 @@
 #summary PoCore Socket Handling API
+#labels Design
 
 The PoCore socket interface provides the standard set of (synchronous) functions. Sockets may also be placed into a non-blocking mode.
 

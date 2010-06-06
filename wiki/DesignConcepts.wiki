@@ -1,4 +1,5 @@
 #summary Basic design concepts for PoCore
+#labels Design
 
 ==Context==
 
