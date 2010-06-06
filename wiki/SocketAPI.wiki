@@ -1,0 +1,26 @@
+#summary PoCore Socket Handling API
+
+The PoCore socket interface provides the standard set of (synchronous) functions. Sockets may also be placed into a non-blocking mode.
+
+For performance, scalability, and portability reasons, a callback-based system will be used for processing socket events.
+_(add background on why I think this is true)_
+
+Rather than reinventing an event-based system, PoCore will provide tight integration of its sockets with a third-party library. See below.
+
+== Event libraries ==
+
+There are a number of choices for an event library:
+
+  * [http://software.schmorp.de/pkg/libev.html libev]: this library uses global variables, so it is not possible to have multiple threads run an event loop
+
+  * [https://labs.omniti.com/trac/reconnoiter Reconnoiter]: this system has a library named *eventer*, but (similar to libev) it also uses global variables, preventing multiple threads from running their own event loops
+
+_other libraries?_
+
+== Windows ==
+
+None of the libraries researched so far provide a solid Windows implementation. *libev* uses BSD socket emulation and the `select()` function. *eventer* makes no provision for Windows at all.
+
+High performance and scalable socket handling under Windows requires the use of [http://msdn.microsoft.com/en-us/library/ms686358(VS.85).aspx overlapped I/O].
+
+Len Holgate has some code for this, along with many blog posts about the problem space. [http://www.lenholgate.com/archives/000637.html Len's code] is not under an OSI-approved license, however, and is written in C++. Thus, it can only be a helpful reference rather than integrated alongside PoCore.
