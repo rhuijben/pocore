@@ -37,3 +37,7 @@ It is certainly possible to share PoCore objects among threads (provided appropr
 See MutexPrimitives and AtomicPrimitives.
 
 _see [http://pocore.googlecode.com/svn/trunk/include/pc_mutex.h pc_mutex.h]_
+
+== Sockets and Event Handling ==
+
+See SocketAPI.
