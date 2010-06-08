@@ -5,6 +5,9 @@ This page describes the overall design, structures, and organization of PoCore's
 
 _more info TBD_
 
+_reminder to self:_
+we may want some Windows-specific allocation rather than malloc(). research starting [http://msdn.microsoft.com/en-us/library/aa366533(VS.85).aspx here].
+
 == Coalescing ==
 
 _More info needed. Here are some rough notes_
