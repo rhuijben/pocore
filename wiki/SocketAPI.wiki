@@ -16,6 +16,8 @@ There are a number of choices for an event library:
 
   * [https://labs.omniti.com/trac/reconnoiter Reconnoiter]: this system has a library named *eventer*, but (similar to libev) it also uses global variables, preventing multiple threads from running their own event loops
 
+_*NOTE*: actually... globals might not be a problem for PoCore. after all, the operating system has globals, too (like file descriptors). as long we we can offer proper isolation at the PoCore API level, then we're good. as such, *eventer* will be investigated futher._
+
 _other libraries?_
 
 == Windows ==
