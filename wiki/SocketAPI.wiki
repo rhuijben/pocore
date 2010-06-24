@@ -27,3 +27,5 @@ None of the libraries researched so far provide a solid Windows implementation. 
 High performance and scalable socket handling under Windows requires the use of [http://msdn.microsoft.com/en-us/library/ms686358(VS.85).aspx overlapped I/O] (also see [http://support.microsoft.com/kb/181611 this KB article]).
 
 Len Holgate has some code for this, along with many blog posts about the problem space. [http://www.lenholgate.com/archives/000637.html Len's code] is not under an OSI-approved license, however, and is written in C++. Thus, it can only be a helpful reference rather than integrated alongside PoCore.
+
+Also examine: http://social.msdn.microsoft.com/Forums/en/windowsgeneraldevelopmentissues/thread/10fc7d86-75d0-4594-adca-8c872877864d
