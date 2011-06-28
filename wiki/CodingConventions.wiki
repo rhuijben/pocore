@@ -27,3 +27,7 @@ Each "object" in PoCore (typically) has the following functions:
 
 `pc_type_owns(ob, pool)`
  Record that `ob` is an owner of `pool`. Tracking will be started for `ob` and `pool` if they are not already subject to tracking.
+
+==Log Messages==
+
+The !PoCore projects uses [http://subversion.apache.org/docs/community-guide/conventions.html#log-messages Subversion's log message guidelines].
