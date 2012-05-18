@@ -9,7 +9,9 @@ _see [http://pocore.googlecode.com/svn/trunk/include/pc_misc.h pc_misc.h]_
 
 ==Pools==
 
-_see MemoryManagement and [http://pocore.googlecode.com/svn/trunk/include/pc_memory.h pc_memory.h]_
+See MemoryManagement.
+
+_also see [http://pocore.googlecode.com/svn/trunk/include/pc_memory.h pc_memory.h]_
 
 ==Tracking==
 
@@ -19,11 +21,9 @@ _see [http://pocore.googlecode.com/svn/trunk/include/pc_track.h pc_track.h]_
 
 ==Error Handling==
 
-Structured errors are returned by a number of !PoCore functions. These errors are represented by `pc_error_t`. Each error must be recognized by the application and marked as handled by calling `pc_error_handled(error)`. Unhandled errors are stored in the !PoCore context (`pc_context_t`). At termination, an application can use `pc_context_unhandled()` to fetch any errors that were not handled. It is important to note: unhandled errors represent *programmer errors*. An application should handle *all* errors returned by PoCore; at the minimum, to ignore them and call `pc_error_handled`.
+See ErrorHandling.
 
-When `PC_DEBUG` is defined, `pc_context_destroy(ctx)` will execute `abort()` if there are unhandled errors. You can then inspect the core dump and its queue of errors to determine where you may have missed handling an error return.
-
-_see [http://pocore.googlecode.com/svn/trunk/include/pc_error.h pc_error.h]_
+_also see [http://pocore.googlecode.com/svn/trunk/include/pc_error.h pc_error.h]_
 
 ==Thread-Safety==
 
