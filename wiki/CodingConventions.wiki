@@ -28,6 +28,16 @@ Each "object" in PoCore (typically) has the following functions:
 `pc_type_owns(ob, pool)`
  Record that `ob` is an owner of `pool`. Tracking will be started for `ob` and `pool` if they are not already subject to tracking.
 
+_note: the typical tracking functions are still subject to change_
+
 ==Log Messages==
 
 The !PoCore projects uses [http://subversion.apache.org/docs/community-guide/conventions.html#log-messages Subversion's log message guidelines].
+
+==Structure Naming==
+
+All structures should be tagged with `pc_type_s`.
+
+If the structure is referenced in a public header, then it should have a corresponding typedef named `pc_type_t`.
+
+Private structures should not have a typedef, but will always be referred to with `struct pc_type_s`.
