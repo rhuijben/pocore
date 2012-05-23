@@ -13,11 +13,11 @@ See MemoryManagement.
 
 _also see [http://pocore.googlecode.com/svn/trunk/include/pc_memory.h pc_memory.h]_
 
-==Tracking==
+== Resource Management ==
 
-_TBD_
+See ResourceManagement.
 
-_see [http://pocore.googlecode.com/svn/trunk/include/pc_track.h pc_track.h]_
+*NOTE*: the code is in transition. The prior "tracking" concept for resource management is found in this header: [http://pocore.googlecode.com/svn/trunk/include/pc_track.h?r=167 pc_track.h]
 
 ==Error Handling==
 
