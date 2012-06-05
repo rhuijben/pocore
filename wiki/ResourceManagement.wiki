@@ -139,4 +139,17 @@ Or it can be removed altogether:
 
 = Caveats =
 
-*NOTE*: the function names used above are subject to change.
+When a pool's cleanups are being run, there are some some things to be aware of:
+
+  * It is possible to attach more cleanups to the pool
+  * Child pools can be created
+  * While destroying child pools, if a cleanup on a child pool *P* installs cleanup *C* on the parent, then *C* will be run after *P* has been been destroyed (and before other child pools continue to be destroyed). This means that *C* cannot depend upon data within *P*, although it may depend on other child pools that still exist.
+  * The cleanups will seemingly disappear from the pool during their processing, which implies:
+    * `pc_cleanup_before()` cannot reference one of those cleanups
+    * `pc_cleanup_run()` and `pc_cleanup_deregister()` will do nothing since it will appear no cleanup function has been registered
+    * `pc_cleanup_register()` can attach another function which will be run later during the pool clearing process
+  * Cleanups are run before child pools are destroyed (so the cleanups can rely on data within a child pool)
+  * When child pools are being destroyed, if a cleanup is detected as newly-registered on the pool, then the child pool destruction process will stop, in order to run the new cleanup.
+  * It is possible to put the pool clearing process into an infinite loop by registering more cleanups within other cleanup callbacks. Developers should be wary about cleanup functions that could possibly register more cleanups.
+
+*Note*: the above caveats only become important if a cleanup function is constructing child pools and/or registering new cleanups. Most cleanup functions will _close_ and _terminate_ resources, rather than _allocate_ more resources.
