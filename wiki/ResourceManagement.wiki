@@ -11,6 +11,8 @@ When a resource is allocated/obtained, then a "cleanup function" should be regis
 
 Cleanup functions are registered with the `pc_cleanup_register(POOL, DATA, CLEANUP)` function for each piece of data.
 
+*Note*: the cleanups are associated with the *data item* (a pointer). Each data item may have only *one* cleanup function.
+
 == Example ==
 
 In this example, we are allocating a parser from a third-party library. To ensure that its resources will be cleaned up, we register a cleanup function at the time we create our container object.
